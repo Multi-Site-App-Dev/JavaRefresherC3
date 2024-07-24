@@ -14,14 +14,16 @@ public class User {
     //isUnderAge
 
     //field syntax: access modifier , non access , datatype , fieldName (identifier);
+    // ex:  public static String greeting = "Hello Intern!";
+    // ex: private int countVar;
     // note: the semi colon denotes that the field had not been instantiated
     // it's been defined - i.e it has a name etc, but it hasn't been assigned a value yet.
 
     //access modifiers to know:
-    // public  - makes fields or variables or classes etc accessible EVERYWHERE withing the app.
-    // protected - makes elements accessible only if they are subclasses and in the same package.
+    // public  - makes fields or variables or classes etc accessible EVERYWHERE within the app.
+    // protected - makes elements accessible only if they are subclasses and/or in the same package.
     // default (usually means there's no keyword in front of the field) - Only accessible within
-                 // the same package - regardless if there's a subclass or not.
+                 // the same package - regardless if it's a subclass or not.
     // private - makes elements accessible only in the class it was created. It doesn't matter
     // if that class has subclasses.
 
@@ -36,19 +38,22 @@ public class User {
 
     //byte,char,int,String,float,double,short,long
     //Wrapper classes - Used when using collections
-    //Byte,Charater,Integer,String,Float,Double,Short,Long
+    //Byte, Character, Integer, String, Float, Double, Short, Long
 
 
     //Constructors - example of Polymorphism
     //A special method - a constructor is used to create an instance of our class
     // aka we are creating objects from our classes (blueprints)
     //This is the default constructor
+    //has no params - meaning no fields are being assigned values from outside the class
+    //at the time that the instance is created
     public User(){
 
     }
 
     //this is our some args constructor
     //meaning some of the fields that are on the class can be defined at instantiation
+    //they are defined by being 'passed in' as params
     public User(String firstName,String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -56,7 +61,6 @@ public class User {
     }
 
     //all args
-
 
     public User(String firstName, String lastName, int age, boolean isUnderAge) {
         this.firstName = firstName;
@@ -119,6 +123,10 @@ public class User {
     public int hashCode() {
         return Objects.hash(firstName, lastName, age, isUnderAge);
     }
+
+
+    //without overriding the .toString() method the memory address is what will be printed out
+    // by default when we print out an object.
 
     @Override
     public String toString() {
