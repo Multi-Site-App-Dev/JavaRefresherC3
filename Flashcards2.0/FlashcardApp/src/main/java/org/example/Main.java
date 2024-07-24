@@ -42,6 +42,7 @@ public class Main {
         User allArgsUser = new User("Tracie","Smith",23,false);
         System.out.println(allArgsUser);
 
+        //TODO:
         //create instances of our Flashcard class
         // aka create new flashcards
 
