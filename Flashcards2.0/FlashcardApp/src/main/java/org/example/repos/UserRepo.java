@@ -5,6 +5,9 @@ import org.example.utils.CRUD;
 
 import java.util.List;
 
+// the 'implements' keyword denotes that we are inheriting the functions
+// or functionality of an interface
+
 public class UserRepo implements CRUD<User>{
     @Override
     public User create(User input) {
