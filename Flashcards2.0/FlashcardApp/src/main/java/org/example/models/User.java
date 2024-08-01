@@ -27,6 +27,7 @@ public class User {
     // private - makes elements accessible only in the class it was created. It doesn't matter
     // if that class has subclasses.
 
+    private int id;
     private String firstName; // we are using camelCasing for our variables
     private String lastName;
     private int age;
@@ -48,13 +49,13 @@ public class User {
     //has no params - meaning no fields are being assigned values from outside the class
     //at the time that the instance is created
     public User(){
-
+        System.out.println("In the User Class");
     }
 
     //this is our some args constructor
     //meaning some of the fields that are on the class can be defined at instantiation
     //they are defined by being 'passed in' as params
-    public User(String firstName,String lastName){
+    public User(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
 
@@ -69,6 +70,15 @@ public class User {
         this.isUnderAge = isUnderAge;
     }
 
+    public User(int id, String firstName, String lastName, int age, boolean isUnderAge) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.isUnderAge = isUnderAge;
+    }
+
+
 
     //Getters nd Setters
     //these are methods that allow us to practice encapsulation
@@ -76,6 +86,14 @@ public class User {
     //therefore we must create getter snd setter (aka methods) that we can use
     //to update (set) or retrieve (get) data frm these fields in our classes.
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -134,6 +152,6 @@ public class User {
                 " " + firstName +
                 " " + lastName + '.' +
                 " They are " + age +
-                " years old.";
+                " years old. Their id is " + id ;
     }
 }

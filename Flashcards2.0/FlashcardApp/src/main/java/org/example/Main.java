@@ -1,6 +1,9 @@
 package org.example;
 
 import org.example.models.User;
+import org.example.repos.UserRepo;
+import org.example.services.UserService;
+import org.example.utils.CRUD;
 
 public class Main {
 
@@ -31,20 +34,45 @@ public class Main {
 
 
         //make an instance of our User class
-        User newUser = new User();
-        System.out.println(newUser);
-        // any variable defined within a method cannot be used outside the method.
-
-        //someargs
-        User someArgsUser = new User("Abel","Zewdie");
-        System.out.println(someArgsUser);
-
+//        User newUser = new User();
+//        System.out.println(newUser);
+//        // any variable defined within a method cannot be used outside the method.
+//
+//        //someargs
+//        User someArgsUser = new User("Abel","Zewdie");
+//        System.out.println(someArgsUser);
+//
         User allArgsUser = new User("Tracie","Smith",23,false);
-        System.out.println(allArgsUser);
+//        System.out.println(allArgsUser);
 
         //TODO:
         //create instances of our Flashcard class
         // aka create new flashcards
+
+
+        // Testing our the UserService layer
+        // after creating a mock DB in our repo layer
+        // and passing it into our service layer as a dependency
+
+        UserService userService = new UserService();
+
+        // create
+
+        System.out.println( userService.createWithoutTouching(allArgsUser));
+      System.out.println( userService.createNewUser(allArgsUser));
+
+
+
+
+        // read
+        System.out.println(userService.getAllUserWithoutTouching());
+     System.out.println( userService.getAllUsers());
+
+
+
+
+
+
 
     }
 
