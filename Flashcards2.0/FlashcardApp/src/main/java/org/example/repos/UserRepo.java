@@ -83,12 +83,13 @@ public class UserRepo implements CRUD<User>{
 
         mockDB.add(input.getId()-1,input);
 
+
         return true;
     }
 
     @Override
     public boolean delete(int id) {
-        // when working with a db you would not actyakly remove 1 from the id
+        // when working with a db you would not actually remove 1 from the id
         // we are only doing this because we are using an arraylist
         //as our mockDB.
         mockDB.remove(id-1);
